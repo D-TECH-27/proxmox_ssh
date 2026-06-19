@@ -128,8 +128,8 @@ Et retirez le symbole faisant office de commentaire (#) en appliquant ou modifia
 * Protocol 2
 * Port 22
 * AddressFamily inet
-* AllowUsers root@\[IP address of the first machine]
-* ListenAddress \[Proxmox IP address]
+* AllowUsers root@\[adresse IP de la première machine]
+* ListenAddress \[adresse IP du serveur Proxmox]
 * HostKey /etc/ssh/ssh\_host\_ed25519\_key
 * LoginGraceTime 2m
 * PermitRootLogin yes
