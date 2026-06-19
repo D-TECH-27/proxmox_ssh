@@ -34,6 +34,7 @@ Dans ce cas, nous pouvons télécharger la dernière version (9.2)
 (Si vous ne trouvez pas le fichier, ouvrez votre Explorateur de Fichiers et glissez-déposez votre fichier. Un message apparaît mais vous pouvez l'ignorer en cliquant sur "OK").
 
 Cliquez sur "DÉMARRER" et attendez !
+
 <img width="501" height="535" alt="image" src="https://github.com/user-attachments/assets/21711c01-3be6-4ab1-b6f4-680be5216cd5" />
 
 N'oubliez pas d'éjecter la clé USB quand cela est terminé !
