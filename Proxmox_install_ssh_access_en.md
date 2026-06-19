@@ -146,4 +146,4 @@ Insert the command on Windows Command Prompt :
 
       ssh root@[Proxmox IP address]
 
-(If the default port was modified (22 by 443 for example), add "-p [port number]" to the end).
+(If the default port was modified (22 by 443 for example), add "-p [port number]" at the end).
