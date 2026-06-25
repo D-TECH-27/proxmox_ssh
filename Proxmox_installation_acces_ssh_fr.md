@@ -64,7 +64,7 @@ Le système va redémarrer après l'installation. Quand la machine redémarre, r
 
 Étape 6 : Allez sur la prmière machine et ouvrez un navigateur web et insérez :
 
-&#x20;     http://\[adresse IP de Proxmox]:8006
+      - http://[adresse IP de Proxmox]:8006
 
 
 Si vous avez accès à votre Proxmox, connectez-vous en root !
@@ -74,13 +74,13 @@ Si vous avez accès à votre Proxmox, connectez-vous en root !
 * vim : Éditeur de texte
 * htop : Informations des composants
 * net-tools : Informations réseau
-* git : Importation de paquets Github
+* git : Importation de projets Github
 * nmap : Analyseur de trames
 * wget : Importation de paquets
 
 ... et bien plus
 
-&#x20;     apt install -y vim htop iotop iftop curl wget git net-tools dnsutils lsof tree tcpdump nmap iperf3 mtr smartmontools nvme-cli unattended-upgrades chrony -y
+      - apt install -y vim htop iotop iftop curl wget git net-tools dnsutils lsof tree tcpdump nmap iperf3 mtr smartmontools nvme-cli unattended-upgrades chrony -y
 
 
 Si ces paquets ne sont pas disponibles, vous pouvez les retirer et appuyer sur Entrée. Ce sont juste des paquets qui n'impacteront pas le système en lui-même sur votre configuration.
@@ -89,16 +89,16 @@ Si ces paquets ne sont pas disponibles, vous pouvez les retirer et appuyer sur E
 
 Pour générer une clé SSH (dans ce cas, avec un chiffrement ed25519) sur Linux, insérez cette commande :
 
-&#x20;     ssh-keygen -o -a 256 -t ed25519 -C "$(hostname)-$(date +'%d-%m-%Y')"
+      -  ssh-keygen -o -a 256 -t ed25519 -C "$(hostname)-$(date +'%d-%m-%Y')"
 
 
 Appuyez sur Entrée 3 fois (pas de mot de passe à saisir).
 
 Étape 9 : Donnez tous les accès à la clé SSH à "root"
 
-&#x20;     chmod 700 /root/.ssh
-      chmod 400 /root/.ssh/id\_ed25519
-      chown root:root /root/.ssh/id\_ed25519\*
+      - chmod 700 /root/.ssh
+      - chmod 400 /root/.ssh/id_ed25519
+      - chown root:root /root/.ssh/id_ed25519*
 
 
 Étape 10 : Sur votre première machine, ouvrez un Invite de Commande et insérez cette commande :
@@ -109,19 +109,19 @@ Appuyez sur Entrée 3 fois (pas de mot de passe à saisir).
 
 Étape 11 : Importez la clé SSH sur le serveur Proxmox. Dans ce cas, j'utilise Windows PowerShell
 
-&#x20;     type "%USERPROFILE%\\.ssh\\id\_ed25519.pub" | ssh root@\[Proxmox IP address] "cat >> .ssh/authorized\_keys"
+      - type "%USERPROFILE%\.ssh\id_ed25519.pub" | ssh root@[Proxmox IP address] "cat >> .ssh/authorized_keys"
 
 
-Vous pouvez retirer le "%USERPROFILE%" le cas échéant.
+NB : Vous pouvez retirer le "%USERPROFILE%" le cas échéant.
 
 Étape 12 : Vérifiez la clé importée sur le serveur en accédant au fichier "authorized\_keys" :
 
-&#x20;     nano /.ssh/authorized\_keys
+      - nano /.ssh/authorized_keys
 
 
 Étape 13 : Allez au fichier de configuration SSH :
 
-&#x20;     nano /etc/ssh/sshd\_config
+     - nano /etc/ssh/sshd_config
 
 
 Et retirez le symbole faisant office de commentaire (#) en appliquant ou modifiant ces paramètres :
@@ -150,13 +150,13 @@ Et retirez le symbole faisant office de commentaire (#) en appliquant ou modifia
 * UseDNS no
 * MaxStartups 2
 
-Enregistrez le fichier en appuyant sur Ctrl+O et quittez !
+Enregistrez le fichier en appuyant sur Ctrl+O et quittez avec Ctrl+X !
 
 Étape 14 : Test de SSH
 
 Insérez la commande sur l'Invite de Commande de Windows :
 
-&#x20;     ssh root@\[Adresse IP de Proxmox]
+      - ssh root@[Adresse IP de Proxmox]
 
 
 (si le port par défaut a été modifié (22 par 443 par exemple), ajoutez "-p \[numéro de port]" à la fin).
