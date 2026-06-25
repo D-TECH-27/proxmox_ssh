@@ -68,7 +68,7 @@ Step 7 : On the Proxmox server, insert this command to install those tools :
 - vim : Text editor
 - htop : Hardware info
 - net-tools : Network info
-- git : Github package import
+- git : Github projects import
 - nmap : Packet analyzer
 - wget : Package import
 
@@ -117,8 +117,8 @@ And remove the comment symbol (#) by applying or editing these settings :
 - Protocol 2
 - Port 22
 - AddressFamily inet
-- AllowUsers root@[IP address of the first machine]
-- ListenAddress [Proxmox IP address]
+- AllowUsers root@\[IP address of the first machine]
+- ListenAddress \[Proxmox IP address]
 - HostKey /etc/ssh/ssh_host_ed25519_key
 - LoginGraceTime 2m
 - PermitRootLogin yes
@@ -138,7 +138,7 @@ And remove the comment symbol (#) by applying or editing these settings :
 - UseDNS no
 - MaxStartups 2
 
-Save the file by pressing Ctrl+O and exit (Ctrl+X)!
+Save the file by pressing Ctrl+O and exit with Ctrl+X!
 
 Step 14 : Testing SSH
 
@@ -146,4 +146,4 @@ Insert the command on Windows Command Prompt :
 
       ssh root@[Proxmox IP address]
 
-(If the default port was modified (22 by 443 for example), add "-p [port number]" at the end).
+(If the default port was modified (22 by 443 for example), add "-p \[port number]" at the end).
